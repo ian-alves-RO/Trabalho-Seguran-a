@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dados do Usuário</title>
+</head>
+<body>
+
+  <h2>Dados Recebidos</h2>
+  <p>Usuario: <span id="usuario"></span></p>
+  <p>Senha: <span id="senha"></span></p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const usuario = params.get("usuario");
+    const senha = params.get("senha");
+
+    document.getElementById("usuario").innerText = usuario;
+    document.getElementById("senha").innerText = senha;
+  </script>
+
+</body>
+</html>

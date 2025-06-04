@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Painel Inicial</title>
+</head>
+<body>
+
+  <h1>Painel Inicial</h1>
+  <p>Bem-vindo<span id="nomeUsuario"></span></p>
+  <button id="btnLogout">Sair</button><br><br>
+
+  <script>
+    // Verifica se usuário está logado
+    const usuarioLogado = sessionStorage.getItem("usuarioLogado");
+
+    if (!usuarioLogado) {
+      // Se não estiver logado, redireciona para login
+      window.location.href = "index.html";
+    } else {
+      // Mostra nome do usuário
+      document.getElementById("nomeUsuario").innerText = usuarioLogado;
+    }
+
+    // Logout
+    document.getElementById("btnLogout").addEventListener("click", function() {
+      sessionStorage.removeItem("usuarioLogado");
+      window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>
+s
